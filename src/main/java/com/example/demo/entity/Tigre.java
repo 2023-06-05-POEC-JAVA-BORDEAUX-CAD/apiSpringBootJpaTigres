@@ -20,7 +20,9 @@ public class Tigre {
     private Zoo zoo;
 
     @ManyToMany
-    private List<Soigneur> soigneurs = new ArrayList<>();
+    private List<Soigneur> soigneurs;
+    // je laisse à NULL pour que le PATCH fonctionne correctement
+    // = new ArrayList<>();
 
     public Tigre() {
     }
@@ -82,6 +84,9 @@ public class Tigre {
     }
 
     public void addSoigneur(Soigneur soigneur){
+        if(soigneurs == null) {
+            soigneurs = new ArrayList<>();
+        }
         this.soigneurs.add(soigneur);
     }
 

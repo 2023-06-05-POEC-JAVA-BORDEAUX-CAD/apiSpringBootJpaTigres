@@ -54,9 +54,6 @@ public class ZooService {
 
     public void patchTigre(Tigre tigrePatch, Integer id) {
 
-        System.out.println(tigrePatch);
-        System.out.println(id);
-
         Optional<Tigre> optional = tigreRepository.findById(id);
         if(optional.isPresent()){
 
@@ -66,5 +63,9 @@ public class ZooService {
 
             tigreRepository.save(tigre);
         }
+    }
+
+    public void deleteSoigneur(int id){
+        soigneurRepository.deleteById(id);
     }
 }

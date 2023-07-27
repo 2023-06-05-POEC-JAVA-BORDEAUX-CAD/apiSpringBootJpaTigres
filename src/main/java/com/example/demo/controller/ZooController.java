@@ -56,4 +56,8 @@ public class ZooController {
         zooService.patchTigre(tigre, id);
     }
 
+    @DeleteMapping("soigneurs/{id}")
+    public void deleteSoigneur( @PathVariable("id") Integer id){
+        zooService.deleteSoigneur(id);
+    }
 }
